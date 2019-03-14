@@ -2,25 +2,25 @@ package model.entity;
 
 
 import model.exception.logic.IllegalPopularityException;
-import model.exception.logic.IllgealAmountOfPagesException;
+import model.exception.logic.IllgealYearOfPublication;
 
 public abstract class PublicationEntity {
     private String genre;
-    private String author;
+    static String author;
     private String title;
-    private int amountOfPages;
+    private int yearOfPublication;
     private int popularity;
-    static String qualityOfPaper;
+    private String qualityOfPaper;
 
     public PublicationEntity() {
 
     }
 
-    public PublicationEntity(String genre, String author, String title, int amountOfPages, int popularity, String qualityOfPaper) {
+    public PublicationEntity(String genre, String author, String title, int yearOfPublication, int popularity, String qualityOfPaper) {
         this.genre = genre;
         this.author = author;
-        this.title = "Ololo";
-        this.amountOfPages = amountOfPages;
+        this.title = title;
+        this.yearOfPublication = yearOfPublication;
         this.popularity = popularity;
         this.qualityOfPaper = qualityOfPaper;
     }
@@ -41,15 +41,15 @@ public abstract class PublicationEntity {
         this.author = author;
     }
 
-    public int getAmountOfPages() {
-        return amountOfPages;
+    public int getYearOfPublication() {
+        return yearOfPublication;
     }
 
-    public void setAmountOfPages(int amountOfPages) throws IllgealAmountOfPagesException {
-        if (amountOfPages <= 0) {
-            throw new IllgealAmountOfPagesException();
+    public void setYearOfPublication(int yearOfPublication) throws IllgealYearOfPublication {
+        if (yearOfPublication <= 0) {
+            throw new IllgealYearOfPublication();
         }
-        this.amountOfPages = amountOfPages;
+        this.yearOfPublication = yearOfPublication;
     }
 
     public String getGenre() {
@@ -78,38 +78,13 @@ public abstract class PublicationEntity {
         return qualityOfPaper;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        PublicationEntity that = (PublicationEntity) o;
-
-        if (amountOfPages != that.amountOfPages) return false;
-        if (popularity != that.popularity) return false;
-        if (!genre.equals(that.genre)) return false;
-        if (!title.equals(that.title)) return false;
-        if (!author.equals(that.author)) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = amountOfPages;
-        result = 31 * result + genre.hashCode();
-        result = 31 * result + popularity;
-        result = 31 * result + title.hashCode();
-        result = 31 * result + author.hashCode();
-        return result;
-    }
 
     @Override
     public String toString() {
         return "Genre = " + getGenre() +
-                ", Autor Name is " + getAuthor() +
-                ", Title is " + getTitle() +
-                ", amountOfPages = " + getAmountOfPages() +
+                ", Author Name is " + getAuthor() +
+                ", Title is " + "\'" + getTitle() + "\'" +
+                ", year of publication = " + getYearOfPublication() +
                 ", popularity = " + getPopularity();
     }
 

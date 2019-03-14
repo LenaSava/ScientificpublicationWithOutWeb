@@ -48,27 +48,19 @@ public class Controller {
         sort.sortByAutor(model);
         view.printStringInput(SORTED_LIST_PUBLICATIONS_AUTOR);
         view.printMessage(model);
-        sort.sortByPages(model);
-        view.printStringInput(SORTED_LIST_PUBLICATIONS_PAGE);
+        sort.sortByYear(model);
+        view.printStringInput(SORTED_LIST_PUBLICATIONS_AGE);
         view.printMessage(model);
         sort.sortByPopularity(model);
         view.printStringInput(SORTED_LIST_PUBLICATIONS_POPULARITY);
         view.printMessage(model);
-        sort.findByParameters(model, "Well");
+        view.printStringInput(SEARCH_RESULT_AUTHOR_NAME);
+        sort.findByParameters(model, "Harry Collins");
+
 
 
     }
 
-//        view.printStringInput(SEARCH_RESULT);
-//        view.printMessage(String.valueOf(service.findTariff(company, 100)));
-//    }
-//
-//    private void addTariffs(Service service, MobileCompany company) {
-//        for (Tariffs t : Tariffs.values()) {
-//            service.addTariff(company, t.getTariff());
-//        }
-//    }
-//
 //    private void addClients(Service service, MobileCompany company, int numberOfClients) {
 //        for (;numberOfClients > 0; numberOfClients--) {
 //            service.addClient(company, new Client());

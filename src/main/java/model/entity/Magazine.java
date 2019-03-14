@@ -4,8 +4,8 @@ public class Magazine extends PublicationEntity {
     private boolean withHotNews;
 
 
-    public Magazine(String genre, String author, String title, int amountOfPages, int popularity, String qualityOfPaper, boolean withHotNews) {
-        super(genre,author,title,amountOfPages, popularity, qualityOfPaper);
+    public Magazine(String genre, String author, String title, int yearOfPublication, int popularity, String qualityOfPaper, boolean withHotNews) {
+        super(genre,author,title,yearOfPublication, popularity, qualityOfPaper);
         this.withHotNews = withHotNews;
     }
 

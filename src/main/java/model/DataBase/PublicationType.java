@@ -8,7 +8,7 @@ import model.entity.PublicationEntity;
 public enum PublicationType {
     SCIENTIFICRESERCH {
         public PublicationEntity factory() {
-            return new Booklet("ReserchPublic", "Andrey Voronin", "Patients and the public", 123, 9, "Normal");
+            return new Booklet("ReserchPublic", "Andrey Voronin", "Patients and the public", 1923, 9, "Normal");
         }
     },
     SCIENTIFICRESERCH2 {

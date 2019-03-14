@@ -1,7 +1,9 @@
 package model.services;
 
+import model.entity.Book;
 import model.entity.PublicationEntity;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,12 +12,11 @@ import view.View;
 public class ServiceSort implements Service {
 
     @Override
-    public List<PublicationEntity> sortByPages(List<PublicationEntity> publ) {
-        publ.sort(Comparator.comparing(PublicationEntity::getAmountOfPages));
+    public List<PublicationEntity> sortByYear(List<PublicationEntity> publ) {
+        publ.sort(Comparator.comparing(PublicationEntity::getYearOfPublication));
         return publ;
 
     }
-
 
     @Override
     public List<PublicationEntity> sortByPopularity(List<PublicationEntity> publ) {
@@ -30,11 +31,13 @@ public class ServiceSort implements Service {
     }
 
     @Override
-    public List<PublicationEntity> findByParameters(List<PublicationEntity> publ, Object qualityOfPaper) {
-        System.out.println(qualityOfPaper);
-        publ.stream().filter(x -> qualityOfPaper.equals(x.getQualityOfPaper())).collect(Collectors.toList());
+    public List<PublicationEntity> findByParameters(List<PublicationEntity> publ, String authorName) {
+        System.out.println(authorName);
+        System.out.println(publ.stream()
+                .filter(x -> authorName.equals(x.getAuthor()))
+                .findAny()
+                .orElse(null));
         return publ;
-
 
     }
 }
