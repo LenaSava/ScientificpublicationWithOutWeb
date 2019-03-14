@@ -61,4 +61,10 @@ public class Controller {
 
     }
 
-}
+//    private void addClients(Service service, MobileCompany company, int numberOfClients) {
+//        for (;numberOfClients > 0; numberOfClients--) {
+//            service.addClient(company, new Client());
+//        }
+//    }
+//}
+    }
