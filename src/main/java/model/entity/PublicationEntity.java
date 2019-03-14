@@ -6,7 +6,7 @@ import model.exception.logic.IllgealYearOfPublication;
 
 public abstract class PublicationEntity {
     private String genre;
-    static String author;
+    private String author;
     private String title;
     private int yearOfPublication;
     private int popularity;

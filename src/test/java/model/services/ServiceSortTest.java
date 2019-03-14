@@ -5,9 +5,12 @@ import model.entity.Book;
 import model.entity.Booklet;
 import model.entity.Magazine;
 import model.entity.PublicationEntity;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.Before;
 import view.View;
+
+import java.util.Collection;
 
 import static org.junit.Assert.*;
 
@@ -27,9 +30,9 @@ public class ServiceSortTest {
         booklet = new Booklet("Statistic", "Duglas Altman", "Our life in statistic", 1203, 3, "Good");
         magazine = new Magazine("Gravitational waves ", "Harry Collins","Gravity's Kiss", 2017, 5, "Well", false);
     }
+
     @Test
     public void sortByPages() {
-
     }
 
     @Test
@@ -42,5 +45,6 @@ public class ServiceSortTest {
 
     @Test
     public void findByParameters() {
+
     }
 }
