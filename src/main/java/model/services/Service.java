@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface Service {
 
+
     public abstract List<PublicationEntity> sortByYear(List<PublicationEntity> publ);
 
     public abstract List<PublicationEntity> sortByPopularity(List<PublicationEntity> publ);

@@ -12,9 +12,6 @@ public abstract class PublicationEntity {
     private int popularity;
     private String qualityOfPaper;
 
-    public PublicationEntity() {
-
-    }
 
     public PublicationEntity(String genre, String author, String title, int yearOfPublication, int popularity, String qualityOfPaper) {
         this.genre = genre;
