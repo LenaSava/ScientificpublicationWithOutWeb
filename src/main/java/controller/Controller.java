@@ -57,7 +57,7 @@ public class Controller {
         view.printMessage(library);
         view.printStringInput(SEARCH_RESULT_AUTHOR_NAME);
         view.printMessage("Zoë Lescaze");
-        sort.findByParameters(library, "Zoë Lescaze");
+        view.printMessage(sort.findByParameters(library, "Zoë Lescaze"));
 
 
 

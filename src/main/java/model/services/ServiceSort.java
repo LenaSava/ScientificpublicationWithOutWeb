@@ -30,14 +30,19 @@ public class ServiceSort implements Service {
     }
 
     @Override
-    public List<PublicationEntity> findByParameters(List<PublicationEntity> publ, String authorName) {
+    public PublicationEntity findByParameters(List<PublicationEntity> publ, String authorName) {
 
 
-        System.out.println(publ.stream()
+//        System.out.println(publ.stream()
+//                .filter(x -> authorName.equals(x.getAuthor()))
+//                .findAny()
+//                .orElse(null));
+
+return publ.stream()
                 .filter(x -> authorName.equals(x.getAuthor()))
                 .findAny()
-                .orElse(null));
+                .orElse(null);
 
-        return publ;
-    }
+
+}
 }

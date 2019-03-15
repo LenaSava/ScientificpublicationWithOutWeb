@@ -13,7 +13,7 @@ public interface Service {
 
     public abstract List<PublicationEntity> sortByAutor(List<PublicationEntity> publ);
 
-    public abstract List<PublicationEntity> findByParameters(List<PublicationEntity> publ, String o);
+    public abstract PublicationEntity findByParameters(List<PublicationEntity> publ, String o);
 
 
 }
